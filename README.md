@@ -1,135 +1,87 @@
-# Turborepo starter
+# 🧔 Barba Brutal
 
-This Turborepo starter is maintained by the Turborepo core team.
+<div align="center">
+<img src="https://github.com/gabscarlos/barba-brutal/raw/main/.gitassets/capa.png" width="350" />
 
-## Using this example
+<div data-badges>
+    <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+    <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
+    <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/prisma-%232D3748.svg?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
+    <img src="https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+    <img src="https://img.shields.io/badge/jwt-%23323330.svg?style=for-the-badge&logo=json-web-tokens&logoColor=pink" alt="JWT" />
+   <img src="https://img.shields.io/badge/turborepo-%23000000.svg?style=for-the-badge&logo=turborepo&logoColor=white" alt="Turborepo" />
+   <img src="https://img.shields.io/badge/expo-%23000000.svg?style=for-the-badge&logo=expo&logoColor=white" alt="Expo" />
+   <img src="https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white" alt="Yarn" />
+   <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" />
+   <img src="https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</div>
+</div>
 
-Run the following command:
+A aplicação Barba Brutal é uma plataforma desenvolvida para otimizar o gerenciamento de agendamentos em barbearias. A aplicação permite que os clientes agendem atendimentos de forma prática e rápida, escolhendo os serviços desejados, horários disponíveis e garantindo uma experiência personalizada e eficiente para todos os envolvidos.
 
-```sh
-npx create-turbo@latest
-```
+A aplicação oferece uma interface moderna e intuitiva, possibilitando que os clientes naveguem facilmente pelo sistema de agendamento (tanto na versão mobile quanto na versão web) selecionem os serviços que desejam realizar, como cortes de cabelo, barbas ou pacotes combinados, e escolham o horário que melhor se adequa à sua rotina.
 
-## What's inside?
+Para os barbeiros, a plataforma proporciona um painel exclusivo onde é possível visualizar todos os agendamentos do dia, organizados de forma clara e detalhada. Isso permite que o profissional gerencie seu tempo de maneira eficiente, garantindo um atendimento de qualidade para cada cliente.
 
-This Turborepo includes the following packages/apps:
+## 🖥️ Como rodar este projeto 🖥️
 
-### Apps and Packages
+### Requisitos:
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- Node.js instalado
+- PostgreSQL configurado
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Execução:
 
-### Utilities
+1. Clone este repositório:
 
-This Turborepo has some additional tools already setup for you:
+   ```sh
+   git clone https://github.com/gabscarlos/barba-brutal.git
+   ```
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+2. Acesse o diretório do projeto:
 
-### Build
+   ```sh
+   cd barba-brutal
+   ```
 
-To build all apps and packages, run the following command:
+3. Instale as dependências com o comando a seguir na pasta raiz do projeto:
 
-```
-cd my-turborepo
+   ```sh
+   yarn install
+   ```
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
+4. Configure as variáveis de ambiente:
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
+   Será necessário criar um arquivo `.env` com as mesmas variáveis de ambiente listadas no arquivo `.env.example` nas pastas `apps/frontend`, `apps/backend` e `apps/mobile`. Cada um desses arquivos deverá ser preenchido com as variáveis de ambiente correspondentes e exemplificadas no arquivo `env.example` de cada pasta.
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+5. Execute as migrações do banco rodando o comando a seguir na pasta prisma que se localiza dentro da pasta `app/backend`:
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+   ```sh
+   npx prisma migrate dev
+   ```
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+6. Inicie a aplicação rodando o comando `yarn dev` na pasta raiz da sua aplicação. Esse comando iniciará todos os projetos da sua aplicação.
 
-### Develop
+7. Acesse o projeto web em [http://localhost:3000](http://localhost:3000) e o projeto mobile através do emulador que será aberto automáticamente.
 
-To develop all apps and packages, run the following command:
+## 🗒️ Features do projeto 🗒️
 
-```
-cd my-turborepo
+- Agendamento e gerenciamento de horários online
+- Cadastro para clientes
+- Controle de serviços oferecidos e valores
+- Escolha de profissionais e serviços a serem prestados
+- Versões Web e Mobile
+- Painel administrativo para barbeiros
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+![](https://github.com/gabscarlos/barba-brutal/raw/main/.gitassets/2.jpg)
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+## 💎 Links úteis 💎
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+- [Next.js](https://nextjs.org/docs)
+- [NestJS](https://docs.nestjs.com/)
+- [Prisma](https://www.prisma.io/docs)
+- [PostgreSQL](https://www.postgresql.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Expo](https://expo.dev)
