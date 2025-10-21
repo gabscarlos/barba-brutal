@@ -25,46 +25,6 @@ A aplicação oferece uma interface moderna e intuitiva, possibilitando que os c
 
 Para os barbeiros, a plataforma proporciona um painel exclusivo onde é possível visualizar todos os agendamentos do dia, organizados de forma clara e detalhada. Isso permite que o profissional gerencie seu tempo de maneira eficiente, garantindo um atendimento de qualidade para cada cliente.
 
-## 🖥️ Como rodar este projeto 🖥️
-
-### Requisitos:
-
-- Node.js instalado
-- PostgreSQL configurado
-
-### Execução:
-
-1. Clone este repositório:
-
-   ```sh
-   git clone https://github.com/gabscarlos/barba-brutal.git
-   ```
-
-2. Acesse o diretório do projeto:
-
-   ```sh
-   cd barba-brutal
-   ```
-
-3. Instale as dependências com o comando a seguir na pasta raiz do projeto:
-
-   ```sh
-   yarn install
-   ```
-
-4. Configure as variáveis de ambiente:
-
-   Será necessário criar um arquivo `.env` com as mesmas variáveis de ambiente listadas no arquivo `.env.example` nas pastas `apps/frontend`, `apps/backend` e `apps/mobile`. Cada um desses arquivos deverá ser preenchido com as variáveis de ambiente correspondentes e exemplificadas no arquivo `env.example` de cada pasta.
-
-5. Execute as migrações do banco rodando o comando a seguir na pasta prisma que se localiza dentro da pasta `app/backend`:
-
-   ```sh
-   npx prisma migrate dev
-   ```
-
-6. Inicie a aplicação rodando o comando `yarn dev` na pasta raiz da sua aplicação. Esse comando iniciará todos os projetos da sua aplicação.
-
-7. Acesse o projeto web em [http://localhost:3000](http://localhost:3000) e o projeto mobile através do emulador que será aberto automáticamente.
 
 ## 🗒️ Features do projeto 🗒️
 
